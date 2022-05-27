@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <title>Zonas críticas por peligros geológicos</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/magnific-popup/magnific-popup.min.css" rel="stylesheet" />
+    <link href="lib/app/css/fonts.css" rel="stylesheet" />
+    <link href="lib/app/css/Style.css" rel="stylesheet" />
+</head>
+<body class="claro">
+    <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline'">
+        <div class="message" style="display:none;">
+            <div class="container-message">
+                <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                Click en una de las regiones para visualizar las zonas críticas por peligros geológicos.
+            </div>
+        </div>
+        <div id="header">
+            <div class="logo">
+                <a href="http://www.ingemmet.gob.pe/" target="_blank">
+                    <img src="http://geocatminapp.ingemmet.gob.pe/complementos/Descargas/logos/logotipo%20ingemmet.png" />
+                </a>
+            </div>
+            <div class="titles">
+                <span id="title" class="title"></span>
+                <span class="subtitle">
+                    <span id="subtitle"></span>
+                    <span class="region-name"></span>
+                </span>
+            </div>
+        </div>
+        <div id="activeZone">
+            <div>
+                <span class="event-title"></span>
+                <img src="http://geocatminapp.ingemmet.gob.pe/complementos/descargas/logos/Flashspot.gif" />
+                <span class="zone"></span>
+            </div>
+        </div>
+        <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'left'">
+            <div id="homeButton" class="homeButton" title="Retornar al mapa principal">
+                <i class="fa fa-home home"></i>
+            </div>
+            <div id="legendButton" class="hidden" title="Lista de peligros geológicos">
+                <i class="fa fa-list-ol legend"></i>
+            </div>
+
+        </div>
+        <div id="rightPane">
+            <div id="closePanel">
+                <span title="Cerrar panel">&times;</span>
+            </div>
+            <div id="legend">
+                <div class="panel-group"></div>
+                <div class="list-group"></div>
+            </div>
+        </div>
+    </div>
+
+    <script id="list-layer-template" type="text/x-handlebars-template">
+        {{#each this}}
+        <a href="{{#if pdf}}https://app.ingemmet.gob.pe/zonascriticas/images/fichas/{{pdf}} {{else}}javascript:void(0);{{/if}}"
+           class="list-group-item" data-idpeligro="{{id}}" target="_blank">
+            <h5 class="titulo-peligro" style="background-color:{{background}};">{{peligro}}</h5>
+            <span class="codigo-peligro">
+                <img src="http://geocatminapp.ingemmet.gob.pe/complementos/descargas/logos/Flashspot.gif" />
+                {{id}}
+            </span>
+            <p>
+                {{resumen}}
+                <br />
+                <strong>Recomendaciones:</strong>
+                <br />
+                {{recomendacion}}
+            </p>
+        </a>
+        {{/each}}
+    </script>
+
+    <!-- JavaScripts -->
+    <script src="lib/handlebars.js/handlebars.min.js"></script>
+    <script src="https://js.arcgis.com/3.27/" data-dojo-config="async:true"></script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="lib/app/js/app.js"></script>
+</body>
+</html>

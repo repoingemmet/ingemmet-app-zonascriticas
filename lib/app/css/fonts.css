@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Land Speed Record';
+    src: url('../fonts/LandSpeedRecord.eot');
+    src: url('../fonts/LandSpeedRecord.eot?#iefix') format('embedded-opentype'), url('../fonts/LandSpeedRecord.woff2') format('woff2'), url('../fonts/LandSpeedRecord.woff') format('woff'), url('../fonts/LandSpeedRecord.ttf') format('truetype'), url('../fonts/LandSpeedRecord.svg#LandSpeedRecord') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,371 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica";
+    background-color: #fafcf6;
+}
+
+.message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 9;
+}
+
+    .message .container-message {
+        background: #189be8;
+        position: absolute;
+        color: #fff;
+        top: 50%;
+        left: 50%;
+        width: 320px;
+        padding: 15px;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+
+#mainWindow {
+    width: 100%;
+    height: 100%;
+}
+
+#centerPane, #rightPane {
+    position: absolute;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    background-color: #fafcf6;
+    z-index: 3;
+    overflow-y: scroll;
+}
+
+#map {
+    padding: 0;
+    width: 70%;
+}
+
+#header {
+    display: none;
+    background-color: rgb(43, 93, 161);
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 1px 0.5px rgba(0,0,0,0.3), 0 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 0.5px rgba(0,0,0,0.3), 0 2px 2px rgba(0,0,0,0.2);
+    -webkit-transition: width ease-in 0.1s;
+    -moz-transition: width ease-in 0.1s;
+    -o-transition: width ease-in 0.1s;
+    -ms-transition: width ease-in 0.1s;
+    transition: width ease-in 0.1s;
+    left: 15px;
+    top: 18px;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: 49px;
+    padding: 0px;
+    z-index: 3;
+    position: absolute;
+    visibility: visible;
+    padding-right: 25px;
+}
+
+    #header .logo, #header .titles {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #header .logo {
+        width: 105px;
+        height: 50px;
+        min-width: 50px;
+        background-color: #ffffff;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        -webkit-box-shadow: 0 1px 0.5px rgba(0,0,0,0.3), 0 2px 2px rgba(0,0,0,0.2);
+        box-shadow: 0 1px 0.5px rgba(0,0,0,0.3), 0 2px 2px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+
+        #header .logo img {
+            cursor: pointer;
+            height: 30px;
+            margin-top: 10px;
+        }
+
+    #header .titles {
+        display: inline-block;
+        font-size: 19px;
+        font-weight: bold;
+        color: #f1f1f1;
+        padding-left: 5px;
+        line-height: 1.2;
+    }
+
+        #header .titles span {
+            display: block;
+        }
+
+        #header .titles .subtitle {
+            font-size: small;
+        }
+
+.subtitle span {
+    display: inline-block !important;
+}
+
+.esriSimpleSlider {
+    border-width: 0;
+    background-color: transparent;
+}
+
+.esriSimpleSliderTL {
+    top: 80px;
+    left: 20px;
+}
+
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton, .esriSimpleSliderVertical .esriSimpleSliderDecrementButton, .homeButton .home, #legendButton .legend {
+    font-size: 20px;
+    -webkit-box-shadow: 0 1px 0.5px rgba(0,0,0,0.3), 0 2px 2px rgba(0,0,0,0.2) !important;
+    box-shadow: 0 1px 0.5px rgba(0,0,0,0.3), 0 2px 2px rgba(0,0,0,0.2) !important;
+    -webkit-border-radius: 50% !important;
+    border-radius: 50% !important;
+    background-color: #fff;
+    border-bottom: 1px solid #57585A;
+    outline: none;
+}
+
+    .esriSimpleSliderVertical .esriSimpleSliderIncrementButton:hover, .esriSimpleSliderVertical .esriSimpleSliderDecrementButton:hover, .homeButton .home:hover, #legendButton .legend:hover {
+        background-color: #eee;
+    }
+
+.esriSimpleSlider div {
+    margin-top: 20px;
+}
+
+#closePanel {
+    display: none;
+    font-size: 30px;
+    background-color: rgb(43, 93, 161);
+    text-align: right;
+    padding-right: 10px;
+    color: #fdfdfd;
+}
+
+    #closePanel span {
+        cursor: pointer;
+    }
+
+#homeButton {
+    position: absolute;
+    display: none;
+    top: 200px;
+    left: 20px;
+    z-index: 50;
+}
+
+#legendButton {
+    position: absolute;
+    display: none;
+    top: 18px;
+    right: 20px;
+    z-index: 50;
+}
+
+    .homeButton .home, #legendButton .legend {
+        padding: 7px;
+        width: 30px;
+        height: 30px;
+        color: #4C4C4C;
+        font-size: 16px;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    #legendButton .legend {
+        background: #2b5da1;
+        color: #fff;
+    }
+
+.claro .dijitSplitContainer-child, .claro .dijitBorderContainer-child {
+    border: 0;
+}
+
+.titulo-peligro {
+    padding: 3px;
+    text-align: center;
+    width: 250px;
+    border-radius: 60px 0px 0px 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 3px;
+    margin-left: 18px;
+}
+
+.list-group-item {
+    padding: 0 15px;
+    background-color: transparent;
+    border-width: 0;
+}
+
+    .list-group-item p {
+        font-size: 13px;
+        color: #000;
+        margin-left: 28px;
+    }
+
+    .list-group-item .codigo-peligro {
+        float: left;
+        font-size: 30px;
+        padding-right: 8px;
+        font-weight: bold;
+        /* height: 100px; */
+    }
+
+    .list-group-item.not-selected {
+        opacity: .3;
+    }
+
+    .list-group-item.selected .codigo-peligro {
+        color: #000;
+    }
+
+.codigo-peligro img {
+    width: 20px;
+    margin-left: -30px;
+    display: none !important;
+}
+
+#activeZone {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 380px;
+    z-index: 9;
+}
+
+    #activeZone .event-title {
+        display: block;
+        font-size: 2em;
+        padding-bottom: 25px;
+        color: #b91414;
+        font-weight: bold;
+        font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    }
+
+    #activeZone img {
+        width: 40px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #activeZone .zone {
+        font-family: 'Land Speed Record';
+        font-size: 5.9em;
+        color: #f0b800;
+    }
+
+@media screen and (max-width: 767px) {
+    #map {
+        width: 100%;
+    }
+
+    .message .container-message {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    #closePanel {
+        display: block;
+    }
+
+    #legendButton {
+        display: block;
+    }
+
+    #header .titles span {
+        font-size: 0.7em
+    }
+
+    #header .titles .subtitle {
+        font-size: 0.8em
+    }
+
+    #rightPane {
+        display: none;
+        position: absolute !important;
+        width: 70%;
+        top: 0 !important;
+        left: auto !important;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        box-shadow: 1px 10px 30px rgba(0,0,0,.5);
+        height: 100% !important;
+        padding-top: 0;
+        padding: 0;
+    }
+
+    #activeZone {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: auto;
+        background-color: #fff;
+        text-align: center;
+        -webkit-transform: none;
+        transform: none;
+        width: auto;
+        border: 3px solid #f0b800;
+        border-radius: 10px;
+        padding: 15px 2px 3px 10px;
+        min-width: 220px;
+        z-index: 3;
+    }
+
+        #activeZone .event-title {
+            position: absolute;
+            width: 100%;
+            font-size: 9px;
+            padding-bottom: 0;
+            top: 4px;
+            left: 0;
+        }
+
+        #activeZone img {
+            display: none;
+        }
+
+        #activeZone .zone {
+            font-family: 'Land Speed Record';
+            font-size: 40px;
+            color: #f0b800;
+        }
+
+    .list-group-item {
+        margin-left: 0 !important;
+    }
+
+        .list-group-item .codigo-peligro {
+            font-size: 2.5em;
+        }
+
+            .list-group-item .codigo-peligro img {
+                display: none;
+            }
+
+        .list-group-item p {
+            font-size: 0.9em;
+        }
+}
